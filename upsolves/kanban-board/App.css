@@ -1,0 +1,45 @@
+.App {
+  display: flex;
+}
+.col {
+  width: 25%;
+  margin-right: 25px;
+}
+.col:first-child {
+  margin-left: 25px;
+}
+.card {
+  background: white;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left,
+.right {
+  font-size: 20px;
+}
+
+.left {
+  margin-left: 8px;
+}
+.right {
+  margin-right: 8px;
+}
+.value {
+  margin: 14px 12px;
+}
+
+.addCard {
+  margin-top: 12px;
+  color: gray;
+  cursor: pointer;
+}
