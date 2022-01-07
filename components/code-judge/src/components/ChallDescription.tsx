@@ -11,6 +11,26 @@ const examples = {
   ex2: 'Input: s = "AAAAAAAAAAAAA", Output: ["AAAAAAAAAA"]',
 };
 
-const ChallengeDescription = () => <div>Challenge Description</div>;
+type Props = {
+  questDescr: string;
+  questExs: string[]; //array of strings
+  questTitle: string;
+  userAns: string;
+  questcallback: any; //not sure if need
+  questNr: number;
+};
+
+const ChallengeDescription: React.FC<Props> = ({
+  questDescr,
+  questExs,
+  questTitle,
+  userAns,
+  questcallback,
+  questNr,
+}) => (
+  <div>
+    <p>Question: {questNr}</p>
+  </div>
+);
 
 export default ChallengeDescription;

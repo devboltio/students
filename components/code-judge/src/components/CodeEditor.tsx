@@ -1,7 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Controlled as CodeMirror } from 'react-codemirror2';
 
-const CodeEditor = () => <div>Code Editor</div>;
+const CodeEditor = () => {
+  return (
+    <div>
+      <h1>Code Editor</h1>
+
+      {/* <CodeMirror
+        value={js}
+        options={{
+          mode: 'javascript',
+          ...codeMirrorOptions,
+        }}
+        onBeforeChange={(editor, data, js) => {
+          this.setState({ js });
+        }}
+      /> */}
+    </div>
+  );
+};
 
 export default CodeEditor;
 

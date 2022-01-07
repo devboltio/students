@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
+import CodeEditor from './components/CodeEditor';
+import Submit from './components/Submit';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hi</h1>
+      <h1>Code Challenge</h1>
+      <CodeEditor />
+      <Submit />
     </div>
   );
 }
