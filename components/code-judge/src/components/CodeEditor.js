@@ -1,7 +1,7 @@
 // import React from 'react';
 // import { useCodeMirror } from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
-import 'codemirror/keymap/dracula.css';
+// import 'codemirror/keymap/dracula.css';
 import CodeMirror from '@uiw/react-codemirror';
 // import { javascript } from '@codemirror/lang-javascript';
 // import { Container } from 'react-bootstrap';
@@ -13,7 +13,7 @@ const CodeEditor = () => {
     <CodeMirror
       value={code}
       options={{
-        theme: 'dracula',
+        // theme: 'dracula',
         keyMap: 'sublime',
         mode: 'jsx',
       }}
