@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Controlled as CodeMirror } from 'react-codemirror2';
+import { Container } from 'react-bootstrap';
 
 const CodeEditor = () => {
   return (
-    <div>
+    <Container>
       <h1>Code Editor</h1>
 
       {/* <CodeMirror
@@ -17,7 +18,7 @@ const CodeEditor = () => {
           this.setState({ js });
         }}
       /> */}
-    </div>
+    </Container>
   );
 };
 
