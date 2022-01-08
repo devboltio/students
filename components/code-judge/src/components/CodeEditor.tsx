@@ -1,23 +1,27 @@
-// import React from 'react';
+import { useState } from 'react';
 // import { useCodeMirror } from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
-// import 'codemirror/keymap/dracula.css';
+import '../codeMirrorDracula.css';
 import CodeMirror from '@uiw/react-codemirror';
 // import { javascript } from '@codemirror/lang-javascript';
-// import { Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
-const code = "console.log('hello world!');\n\n\n";
+const code = "console.log('hello world!');";
 
 const CodeEditor = () => {
+  const [code, setCode] = useState('');
+
   return (
-    <CodeMirror
-      value={code}
-      options={{
-        // theme: 'dracula',
-        keyMap: 'sublime',
-        mode: 'jsx',
-      }}
-    />
+    <Container>
+      <CodeMirror
+        value={code}
+        // options={{
+        //   theme: 'dracula',
+        //   keyMap: 'sublime',
+        //   mode: 'jsx',
+        // }}
+      />
+    </Container>
   );
 
   // const editor = useRef();
