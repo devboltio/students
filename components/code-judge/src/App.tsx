@@ -34,7 +34,7 @@ function App() {
   // const [questTitle, setQuestTitle] = useState(hardCodedTitle);
   // const [questNr, setQuestNr] = useState(hardCodedNr);
   const [challComplete, setChallComplete] = useState(false);
-  // const [userAns, setUserAns] = useState<UserAnswerObject[]>([]);
+  // const [userAns, setUserAns] = useState(null);
 
   const startCodingEnviro = async () => {
     setLoading(true);
@@ -44,6 +44,16 @@ function App() {
     //   language,
     //   Difficulty.EASY
     // )
+
+    interface UserAnswer {
+      //not sure where I want this??
+      question: string;
+      answer: string;
+      timeToComplete: number;
+      correct: boolean;
+      languageUsed: string;
+      correctAnswer: string;
+    }
   };
 
   return (
@@ -57,7 +67,6 @@ function App() {
         questDescr={hardCodedDescription}
         questTitle={hardCodedTitle}
         questExs={hardCodedExamples}
-        // userAns={userAns}
         // check ans function here? I could pass it as a props... like Submit component
       />
       <CodeEditor />

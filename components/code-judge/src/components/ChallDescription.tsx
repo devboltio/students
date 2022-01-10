@@ -3,29 +3,18 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 // TODO: coding problems API.
 
-type Props = {
+interface QuestionProps {
   questDescr: string;
   questExs: string[]; //array of strings
   questTitle: string;
-  // userAns: []; //this will be the algorithm. Not sure about type
   //   questcallback: any; //not sure if need
   questNr: number;
-};
+}
 
-type UserAnswerObject = {
-  question: string;
-  answer: string; //this will be the algorithm they made
-  timeToComplete: number;
-  correct: boolean;
-  languageUsed: string;
-  correctAnswer: string;
-};
-
-const ChallengeDescription: React.FC<Props> = ({
+const ChallengeDescription: React.FC<QuestionProps> = ({
   questDescr,
   questExs,
   questTitle,
-  // userAns,
   //   questcallback, //need?
   questNr,
 }) => (
@@ -36,11 +25,12 @@ const ChallengeDescription: React.FC<Props> = ({
     <p dangerouslySetInnerHTML={{ __html: questDescr }} />
     <div>
       <Row>
-        {questExs.map((ex) => {
-          <p>{ex}</p>;
-        })}
+        <Col>
+          {questExs.map((ex) => (
+            <p>{ex}</p>
+          ))}
+        </Col>
       </Row>
-      ;
     </div>
   </Container>
 );
