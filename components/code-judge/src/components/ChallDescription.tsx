@@ -7,16 +7,25 @@ type Props = {
   questDescr: string;
   questExs: string[]; //array of strings
   questTitle: string;
-  userAns: []; //this will be the algorithm. Not sure about type
+  // userAns: []; //this will be the algorithm. Not sure about type
   //   questcallback: any; //not sure if need
   questNr: number;
+};
+
+type UserAnswerObject = {
+  question: string;
+  answer: string; //this will be the algorithm they made
+  timeToComplete: number;
+  correct: boolean;
+  languageUsed: string;
+  correctAnswer: string;
 };
 
 const ChallengeDescription: React.FC<Props> = ({
   questDescr,
   questExs,
   questTitle,
-  userAns,
+  // userAns,
   //   questcallback, //need?
   questNr,
 }) => (

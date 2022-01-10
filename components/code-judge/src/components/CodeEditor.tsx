@@ -4,7 +4,8 @@ import 'codemirror/keymap/sublime';
 import '../codeMirrorDracula.css';
 import CodeMirror from '@uiw/react-codemirror';
 // import { javascript } from '@codemirror/lang-javascript';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import CSS from 'csstype';
 
 const code = "console.log('hello world!');";
 
@@ -13,14 +14,16 @@ const CodeEditor = () => {
 
   return (
     <Container>
-      <CodeMirror
-        value={code}
-        // options={{
-        //   theme: 'dracula',
-        //   keyMap: 'sublime',
-        //   mode: 'jsx',
-        // }}
-      />
+      <Row>
+        <CodeMirror
+          value={code}
+          // options={{
+          //   theme: 'dracula',
+          //   keyMap: 'sublime',
+          //   mode: 'jsx',
+          // }}
+        />
+      </Row>
     </Container>
   );
 
@@ -55,18 +58,3 @@ const CodeEditor = () => {
 };
 
 export default CodeEditor;
-
-// function makePair<P extends number | string, T extends string | P>() {
-//     let pair: { first: P, sec: T }
-
-//     function setPair(x: P, y: T) {
-//         pair = {
-//             first: x,
-//             sec: y
-//         }
-//     }
-//     return { setPair }
-// }
-
-// const { setPair } = makePair<number, string>()
-// setPair(1, 'hi')
