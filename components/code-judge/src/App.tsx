@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Button } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 import ChallengeDescription from './components/ChallDescription';
 import CodeEditor from './components/CodeEditor';
 import Submit from './components/Submit';
-import { fetchQuestions } from './API';
+import Stopwatch from './components/Stopwatch';
+// import { fetchQuestions } from './API';
 
 // types
 // import { Difficulty, QuestionState } from './API'; //for fetching questions from a coding question api
@@ -29,12 +30,9 @@ const hardCodedNr = 0;
 
 function App() {
   const [loading, setLoading] = useState(false);
-  // const [questDescr, setQuestDescr] = useState(hardCodedDescription);
-  // const [questExs, setQuestExs] = useState(hardCodedExamples);
-  // const [questTitle, setQuestTitle] = useState(hardCodedTitle);
-  // const [questNr, setQuestNr] = useState(hardCodedNr);
   const [challComplete, setChallComplete] = useState(false);
-  // const [userAns, setUserAns] = useState(null);
+  const [start, setStart] = useState<boolean>(false);
+  const [time, setTime] = useState<number>(0);
 
   const startCodingEnviro = async () => {
     setLoading(true);
@@ -44,24 +42,16 @@ function App() {
     //   language,
     //   Difficulty.EASY
     // )
-
-    interface UserAnswer {
-      //not sure where I want this??
-      question: string;
-      answer: string;
-      timeToComplete: number;
-      correct: boolean;
-      languageUsed: string;
-      correctAnswer: string;
-    }
   };
 
   return (
     <div className="App">
       <h1>Code Challenge</h1>
 
-      {/* btn starts a timer */}
-      <Button onClick={() => startCodingEnviro()}>Begin!</Button>
+      <Row>
+        <Button onClick={() => startCodingEnviro()}>Begin!</Button>
+        <Stopwatch start={start} />
+      </Row>
       <ChallengeDescription
         questNr={hardCodedNr}
         questDescr={hardCodedDescription}
@@ -70,7 +60,7 @@ function App() {
         // check ans function here? I could pass it as a props... like Submit component
       />
       <CodeEditor />
-      <Submit />
+      {/* <Submit /> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 // The file to make API calls for the questions and MAYBE the codeEditor
 
 // just an example of what this might look like
-export type Question = {
+export interface Question {
     category: string;
     correct_ans: string;
     difficulty: string;
