@@ -4,7 +4,7 @@ import { Button, Row } from 'react-bootstrap';
 import ChallengeDescription from './components/ChallDescription';
 import CodeEditor from './components/CodeEditor';
 import Submit from './components/Submit';
-import Stopwatch from './components/Stopwatch';
+import StopwatchComp from './components/Stopwatch';
 // import { fetchQuestions } from './API';
 
 // types
@@ -28,9 +28,14 @@ const hardCodedExamples = [
 ];
 const hardCodedNr = 0;
 
+interface TimeState {
+  time: number;
+  stopwatch: number | undefined;
+}
+
 function App() {
-  const [loading, setLoading] = useState(false);
-  const [challComplete, setChallComplete] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [challComplete, setChallComplete] = useState<boolean>(false);
   const [start, setStart] = useState<boolean>(false);
   const [time, setTime] = useState<number>(0);
 
@@ -50,7 +55,7 @@ function App() {
 
       <Row>
         <Button onClick={() => startCodingEnviro()}>Begin!</Button>
-        <Stopwatch start={start} />
+        <StopwatchComp time={0} stopwatch={0} />
       </Row>
       <ChallengeDescription
         questNr={hardCodedNr}
@@ -60,7 +65,6 @@ function App() {
         // check ans function here? I could pass it as a props... like Submit component
       />
       <CodeEditor />
-      {/* <Submit /> */}
     </div>
   );
 }

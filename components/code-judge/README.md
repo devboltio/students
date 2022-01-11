@@ -10,5 +10,5 @@ This excellent TypeScript/React tutorial: https://www.youtube.com/watch?v=F2JCjV
   1a. Online code editor is at least x# of lines default
 
 2. Finish components
-3. Timer begins at begin btn
+3. Timer begins at begin btn: credit https://codesandbox.io/s/stopwatch-typescript-itirf?from-embed=&file=/src/index.tsx
 4. submit button handles user input
