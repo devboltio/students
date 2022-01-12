@@ -5,6 +5,7 @@ import ChallengeDescription from './components/ChallDescription';
 import CodeEditor from './components/CodeEditor';
 import Submit from './components/Submit';
 import StopwatchComp from './components/Stopwatch';
+import Stopwatch from './components/Stopwatch';
 // import { fetchQuestions } from './API';
 
 // types
@@ -55,7 +56,8 @@ function App() {
 
       <Row>
         <Button onClick={() => startCodingEnviro()}>Begin!</Button>
-        <StopwatchComp time={0} stopwatch={0} />
+        {/* <StopwatchComp time={0} stopwatch={0} /> */}
+        <Stopwatch />
       </Row>
       <ChallengeDescription
         questNr={hardCodedNr}

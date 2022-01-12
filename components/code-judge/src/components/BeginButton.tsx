@@ -9,7 +9,9 @@ type ButtonProps = {
 
 function BeginButton({ title, time, onClick }: ButtonProps) {
   return (
-    <Button className={'button'} title={title} onClick={() => onClick(time)} />
+    <Button className={'button'} title={title} onClick={() => onClick(time)}>
+      {title}
+    </Button>
   );
 }
 
