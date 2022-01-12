@@ -1,18 +1,33 @@
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, Card } from 'react-bootstrap';
 import { useStopwatch } from 'react-timer-hook';
 
 const Stopwatch = () => {
   const { seconds, minutes, hours, days, isRunning, start, pause, reset } =
     useStopwatch({ autoStart: false });
 
+  const makeQuestionVisible = () => {
+    // makes the Q visible
+  };
+
+  const startQuiz = () => {
+    start; //starts the stopwatch
+    makeQuestionVisible();
+  };
+
   return (
     <Container>
-      <div style={{ fontSize: '100px' }}>
-        <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
-      </div>
-      <Button onClick={start}>Start</Button>
-      {/* <button onClick={pause}>Pause</button>
-      <button onClick={reset}>Reset</button> */}
+      {/* <div style={{ fontSize: '100px' }}> */}
+      <Card border="danger">
+        <Card.Title>Time Elapsed</Card.Title>
+        <Card.Body>
+          {hours}:{minutes}:{seconds}
+        </Card.Body>
+      </Card>
+      {/* </div> */}
+      <Button onClick={startQuiz()}>Start</Button>
+      <Button onClick={pause}>Pause</Button>
+      {/* <button onClick={reset}>Reset</button> */}
+      {/* ERROR WITH THE ONCLICK EVENT, NOT SURE HOW TO FIX. Could implement custom reset */}
     </Container>
   );
 };

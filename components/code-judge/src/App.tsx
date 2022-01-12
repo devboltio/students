@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Button, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import ChallengeDescription from './components/ChallDescription';
 import CodeEditor from './components/CodeEditor';
 import Submit from './components/Submit';
@@ -51,13 +51,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Code Challenge</h1>
-
+    <Container className="App" fluid>
       <Row>
-        <Button onClick={() => startCodingEnviro()}>Begin!</Button>
+        <Col>
+          <h1>Code Challenge</h1>
+        </Col>
+
+        {/* <Button onClick={() => startCodingEnviro()}>Begin!</Button> */}
         {/* <StopwatchComp time={0} stopwatch={0} /> */}
-        <Stopwatch />
+        <Col>
+          <Stopwatch />
+        </Col>
       </Row>
       <ChallengeDescription
         questNr={hardCodedNr}
@@ -67,7 +71,7 @@ function App() {
         // check ans function here? I could pass it as a props... like Submit component
       />
       <CodeEditor />
-    </div>
+    </Container>
   );
 }
 
