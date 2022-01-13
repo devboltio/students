@@ -2,9 +2,14 @@
     "extends": [
       "plugin:prettier/recommended"
     ],
-  
+    "parser": "@typescript-eslint/parser",
     "plugins": ["prettier"],
-  
+    "parserOptions": {
+      "requireConfigFile": false,
+      "babelOptions": {
+        "presets": ["@babel/preset-react"],
+      },
+    },
     "rules": {
       "prettier/prettier": "error"
     }

@@ -8,16 +8,19 @@
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.19",
+    "@uiw/react-codemirror": "^4.3.2",
+    "codemirror": "^5.65.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^17.0.2",
+    "react-idle-timer": "^4.6.4",
     "react-scripts": "5.0.0",
+    "react-time-tracker-stopwatch": "^0.0.4",
+    "react-timer-hook": "^3.0.5",
     "styled-components": "^5.3.3",
-    "typescript": "^4.5.4",
+    "ts-stopwatch": "^0.0.4",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -45,9 +48,23 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-react": "^7.16.7",
+    "@types/react": "^17.0.38",
+    "@types/react-bootstrap": "^0.32.29",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.2",
+    "@types/yup": "^0.29.13",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  },
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
   }
 }
