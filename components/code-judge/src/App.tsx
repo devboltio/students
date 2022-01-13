@@ -3,10 +3,11 @@ import './App.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import ChallengeDescription from './components/ChallDescription';
 import CodeEditor from './components/CodeEditor';
-import Submit from './components/Submit';
-import StopwatchComp from './components/Stopwatch';
+// import Submit from './components/Submit';
+// import StopwatchComp from './components/Stopwatch';
 import Stopwatch from './components/Stopwatch';
 // import { fetchQuestions } from './API';
+import { useStopwatch } from 'react-timer-hook';
 
 // types
 // import { Difficulty, QuestionState } from './API'; //for fetching questions from a coding question api
@@ -30,6 +31,7 @@ const hardCodedExamples = [
 const hardCodedNr = 0;
 
 interface TimeState {
+  //i think this was for the stopwatchComp
   time: number;
   stopwatch: number | undefined;
 }
@@ -37,13 +39,18 @@ interface TimeState {
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [challComplete, setChallComplete] = useState<boolean>(false);
-  const [start, setStart] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(false);
+  // const [start, setStart] = useState<boolean>(false);
   const [time, setTime] = useState<number>(0);
+
+  const { seconds, minutes, hours, days, isRunning, start, pause, reset } =
+    useStopwatch({ autoStart: false });
 
   const startCodingEnviro = async () => {
     setLoading(true);
     setChallComplete(false);
-
+    setVisible(true);
+    // startClock();
     // const newQuestion = await fetchQuestions(
     //   language,
     //   Difficulty.EASY
@@ -56,21 +63,30 @@ function App() {
         <Col>
           <h1>Code Challenge</h1>
         </Col>
-
-        {/* <Button onClick={() => startCodingEnviro()}>Begin!</Button> */}
-        {/* <StopwatchComp time={0} stopwatch={0} /> */}
         <Col>
-          <Stopwatch />
+          <Stopwatch onClick={start} />
+          {/* onClick needs to be removed or altered */}
         </Col>
       </Row>
-      <ChallengeDescription
-        questNr={hardCodedNr}
-        questDescr={hardCodedDescription}
-        questTitle={hardCodedTitle}
-        questExs={hardCodedExamples}
-        // check ans function here? I could pass it as a props... like Submit component
-      />
-      <CodeEditor />
+      <Row>
+        <Col>
+          <Button onClick={() => startCodingEnviro()}>Begin!</Button>
+        </Col>
+      </Row>
+      <Row>
+        {visible ? (
+          <ChallengeDescription
+            questNr={hardCodedNr}
+            questDescr={hardCodedDescription}
+            questTitle={hardCodedTitle}
+            questExs={hardCodedExamples}
+            // check ans function here? I could pass it as a props... like Submit component
+          />
+        ) : null}
+      </Row>
+      <Row>
+        <CodeEditor />
+      </Row>
     </Container>
   );
 }
