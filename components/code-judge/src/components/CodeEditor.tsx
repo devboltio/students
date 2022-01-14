@@ -28,7 +28,7 @@ const CodeEditor = () => {
   };
 
   return (
-    <Container>
+    <Container className="header">
       <Row>
         <CodeMirror
           value={code}
@@ -43,7 +43,12 @@ const CodeEditor = () => {
 
       <Row>
         <Col>
-          <Button variant="success" type="submit" onClick={(e) => submit(e)}>
+          <Button
+            variant="success"
+            type="submit"
+            onClick={(e) => submit(e)}
+            className="header"
+          >
             Submit
           </Button>
         </Col>

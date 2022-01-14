@@ -16,20 +16,26 @@ const ChallengeDescription: React.FC<QuestionProps> = ({
   //   questcallback, //need?
   questNr,
 }) => (
-  <Container>
-    <p>
-      Question: {questNr}. {questTitle}
-    </p>
-    <p dangerouslySetInnerHTML={{ __html: questDescr }} />
-    <div>
-      <Row>
-        <Col>
-          {questExs.map((ex) => (
-            <p>{ex}</p>
-          ))}
-        </Col>
-      </Row>
-    </div>
+  <Container className="questionDescription header">
+    <Row>
+      <Col>
+        <h5>
+          {questNr}. {questTitle}
+        </h5>
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+        <p dangerouslySetInnerHTML={{ __html: questDescr }} />
+      </Col>
+    </Row>
+    <Row>
+      <Col>
+        {questExs.map((ex) => (
+          <p>{ex}</p>
+        ))}
+      </Col>
+    </Row>
   </Container>
 );
 

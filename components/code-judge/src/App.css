@@ -40,6 +40,27 @@
 .stickyBtm {
   /* https://www.google.com/search?q=react-bootstrap+make+col+stick+to+bottom&oq=react-bootstrap+make+col+stick+to+bottom&aqs=chrome..69i57j33i22i29i30.12218j0j7&sourceid=chrome&ie=UTF-8 */
   position: absolute;
-  bottom: 0;
+  bottom: 1em;
   right: 1em;
+  opacity: 0.5;
+}
+.stickyBtm:hover {
+  opacity: 1;
+}
+.questionDescription {
+  text-align: left;
+  /* margin-top: 3em; */
+}
+.header {
+  margin-top: 2em;
+}
+.bg {
+  /* flex: 1; */
+  /* resize: cover; */
+  background-image: url(./images/lightbulbBackground.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }

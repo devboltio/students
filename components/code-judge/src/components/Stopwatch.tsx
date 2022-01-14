@@ -19,13 +19,17 @@ const Stopwatch: React.FC<StopwatchProps> = (startClock) => {
   // };
 
   return (
-    <Card border="light" className="text-muted">
-      <Card.Title as="p">Time Elapsed</Card.Title>
-      <Card.Subtitle>
-        {hours > 0 ? `${hours}` : ''}
-        {minutes} min {seconds} sec
-      </Card.Subtitle>
-    </Card>
+    <Row className="stickyBtm">
+      <Col>
+        <Card border="light" className="text-muted">
+          <Card.Title as="p">Time Elapsed</Card.Title>
+          <Card.Subtitle>
+            {hours > 0 ? `${hours}` : ''}
+            {minutes} min {seconds} sec
+          </Card.Subtitle>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

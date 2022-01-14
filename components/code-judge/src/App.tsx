@@ -59,31 +59,27 @@ function App() {
   };
 
   return (
-    <Container className="App" fluid>
+    <Container className="App bg" fluid>
       <Row>
-        <Col className="appHeader">
+        <Col className="appHeader header">
           <h1>Code Challenge</h1>
         </Col>
       </Row>
-      <Row>
+      <Row className="header">
         <Col>
           <Button onClick={() => startCodingEnviro()}>Begin!</Button>
         </Col>
       </Row>
-      <Row>
-        {visible ? (
-          <ChallengeDescription
-            questNr={hardCodedNr}
-            questDescr={hardCodedDescription}
-            questTitle={hardCodedTitle}
-            questExs={hardCodedExamples}
-            // check ans function here? I could pass it as a props... like Submit component
-          />
-        ) : null}
-      </Row>
-      <Row>
-        <CodeEditor />
-      </Row>
+      {visible ? (
+        <ChallengeDescription
+          questNr={hardCodedNr}
+          questDescr={hardCodedDescription}
+          questTitle={hardCodedTitle}
+          questExs={hardCodedExamples}
+          // check ans function here? I could pass it as a props... like Submit component
+        />
+      ) : null}
+      <CodeEditor />
       <Row>
         {challComplete && loading ? (
           <p>Loading your score...</p>
@@ -91,12 +87,9 @@ function App() {
           <Feedback /> //will have to trigger not loading when score completed
         ) : null}
       </Row>
-      <Row className="stickyBtm bg-transparent">
-        <Col>
-          <Stopwatch onClick={start} />
-          {/* onClick needs to be removed or altered */}
-        </Col>
-      </Row>
+
+      <Stopwatch onClick={start} />
+      {/* onClick needs to be removed or altered */}
     </Container>
   );
 }
