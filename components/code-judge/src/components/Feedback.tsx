@@ -7,7 +7,7 @@ const Feedback = () => {
   };
 
   const displayFeedback = () => {};
-  return 'x';
+  return <p>Submit Component!</p>;
 };
 
 export default Feedback;

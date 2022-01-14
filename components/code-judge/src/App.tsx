@@ -8,6 +8,7 @@ import CodeEditor from './components/CodeEditor';
 import Stopwatch from './components/Stopwatch';
 // import { fetchQuestions } from './API';
 import { useStopwatch } from 'react-timer-hook';
+import Feedback from './components/Feedback';
 
 // types
 // import { Difficulty, QuestionState } from './API'; //for fetching questions from a coding question api
@@ -60,12 +61,8 @@ function App() {
   return (
     <Container className="App" fluid>
       <Row>
-        <Col>
+        <Col className="appHeader">
           <h1>Code Challenge</h1>
-        </Col>
-        <Col>
-          <Stopwatch onClick={start} />
-          {/* onClick needs to be removed or altered */}
         </Col>
       </Row>
       <Row>
@@ -86,6 +83,19 @@ function App() {
       </Row>
       <Row>
         <CodeEditor />
+      </Row>
+      <Row>
+        {challComplete && loading ? (
+          <p>Loading your score...</p>
+        ) : challComplete && !loading ? (
+          <Feedback /> //will have to trigger not loading when score completed
+        ) : null}
+      </Row>
+      <Row className="stickyBtm bg-transparent">
+        <Col>
+          <Stopwatch onClick={start} />
+          {/* onClick needs to be removed or altered */}
+        </Col>
       </Row>
     </Container>
   );

@@ -19,24 +19,31 @@ const Stopwatch: React.FC<StopwatchProps> = (startClock) => {
   // };
 
   return (
-    <Container>
-      {/* <div style={{ fontSize: '100px' }}> */}
-      <Card border="danger">
-        <Card.Title>Time Elapsed</Card.Title>
-        <Card.Body>
-          {hours > 0 ? `${hours}` : ''}
-          {minutes} min {seconds} sec
-        </Card.Body>
-      </Card>
-      {/* </div> */}
-      {/* <Button onClick={startQuiz}>Start</Button>
-      <Button onClick={pause}>Pause</Button> */}
-      {/* <button onClick={reset}>Reset</button> */}
-      {/* ERROR WITH THE ONCLICK EVENT, NOT SURE HOW TO FIX. Could implement custom reset */}
-    </Container>
+    <Card border="light" className="text-muted">
+      <Card.Title as="p">Time Elapsed</Card.Title>
+      <Card.Subtitle>
+        {hours > 0 ? `${hours}` : ''}
+        {minutes} min {seconds} sec
+      </Card.Subtitle>
+    </Card>
   );
 };
 
 export default Stopwatch;
 
 // start button in app.tsx will start the timer and make the question visible
+
+{
+  /* </div> */
+}
+{
+  /* <Button onClick={startQuiz}>Start</Button>
+      <Button onClick={pause}>Pause</Button> */
+}
+{
+  /* <button onClick={reset}>Reset</button> */
+}
+{
+  /* ERROR WITH THE ONCLICK EVENT, NOT SURE HOW TO FIX. Could implement custom reset */
+}
+// </Container>

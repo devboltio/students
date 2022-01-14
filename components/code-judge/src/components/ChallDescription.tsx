@@ -1,11 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-// TODO: coding problems API.
-
 interface QuestionProps {
   questDescr: string;
-  questExs: string[]; //array of strings
+  questExs: string[];
   questTitle: string;
   //   questcallback: any; //not sure if need
   questNr: number;

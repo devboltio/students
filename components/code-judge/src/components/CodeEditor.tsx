@@ -15,15 +15,17 @@ interface UserAnswer {
   correct: boolean;
   languageUsed: string;
   correctAnswer: string;
+  // if i do decide I want to use this, refer to min 51 for how to save the ans in here
 }
 
 const CodeEditor = () => {
   const [code, setCode] = useState<string>('');
-  const [userAns, setUserAns] = useState<UserAnswer[]>([]);
+  const [userAns, setUserAns] = useState(''); //<UserAnswer[]>([]);
 
   const submit = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // console.log(e);
-  }; //should trigger a loading component, spinner maybe.
+    setUserAns(e.currentTarget.value);
+    // starts tests, not sure how to embed these
+  };
 
   return (
     <Container>

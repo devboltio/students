@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.stickyBtm {
+  /* https://www.google.com/search?q=react-bootstrap+make+col+stick+to+bottom&oq=react-bootstrap+make+col+stick+to+bottom&aqs=chrome..69i57j33i22i29i30.12218j0j7&sourceid=chrome&ie=UTF-8 */
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+}
