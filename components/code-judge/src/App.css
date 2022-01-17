@@ -64,3 +64,10 @@
   width: 100vw;
   height: 100vh;
 }
+/* .appHeader {
+  background-color: white;
+  opacity: 0.25;
+} */
+.codeEditor {
+  text-align: left;
+}
