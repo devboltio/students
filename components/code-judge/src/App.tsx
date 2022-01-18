@@ -8,6 +8,7 @@ import CodeEditor from './components/CodeEditor';
 import Stopwatch from './components/Stopwatch';
 // import { fetchQuestions } from './API';
 import { useStopwatch } from 'react-timer-hook';
+import Feedback from './components/Feedback';
 
 // types
 // import { Difficulty, QuestionState } from './API'; //for fetching questions from a coding question api
@@ -58,35 +59,37 @@ function App() {
   };
 
   return (
-    <Container className="App" fluid>
+    <Container className="App bg" fluid>
       <Row>
-        <Col>
+        <Col className="appHeader header">
           <h1>Code Challenge</h1>
         </Col>
-        <Col>
-          <Stopwatch onClick={start} />
-          {/* onClick needs to be removed or altered */}
-        </Col>
       </Row>
-      <Row>
+      <Row className="header">
         <Col>
           <Button onClick={() => startCodingEnviro()}>Begin!</Button>
         </Col>
       </Row>
+      {visible ? (
+        <ChallengeDescription
+          questNr={hardCodedNr}
+          questDescr={hardCodedDescription}
+          questTitle={hardCodedTitle}
+          questExs={hardCodedExamples}
+          // check ans function here? I could pass it as a props... like Submit component
+        />
+      ) : null}
+      <CodeEditor />
       <Row>
-        {visible ? (
-          <ChallengeDescription
-            questNr={hardCodedNr}
-            questDescr={hardCodedDescription}
-            questTitle={hardCodedTitle}
-            questExs={hardCodedExamples}
-            // check ans function here? I could pass it as a props... like Submit component
-          />
+        {challComplete && loading ? (
+          <p>Loading your score...</p>
+        ) : challComplete && !loading ? (
+          <Feedback /> //will have to trigger not loading when score completed
         ) : null}
       </Row>
-      <Row>
-        <CodeEditor />
-      </Row>
+
+      <Stopwatch onClick={start} />
+      {/* onClick needs to be removed or altered */}
     </Container>
   );
 }
