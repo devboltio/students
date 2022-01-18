@@ -4,11 +4,5 @@ This excellent TypeScript/React tutorial: https://www.youtube.com/watch?v=F2JCjV
 
 # TODO
 
-1. Add online dev environment (API?)
-
-- react-codeMirror: https://codemirror.net/doc/manual.html#config, tutorial: https://www.youtube.com/watch?v=aXXZwyeTJ98&ab_channel=SuboptimalEngineer
-  1a. Online code editor is at least x# of lines default
-
-2. Finish components
-3. Timer begins at begin btn: https://www.npmjs.com/package/react-timer-hook
-4. submit button handles user input
+- 'Begin' btn starts timer
+- submit btn submits and starts tests

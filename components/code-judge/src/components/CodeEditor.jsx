@@ -21,8 +21,10 @@ const CodeEditor = () => {
   const [code, setCode] = useState('a = 0');
   //<string>('');
   const [userAns, setUserAns] = useState(''); //<UserAnswer[]>([]);
+  const [submitted, setSubmitted] = useState(false);
   const submit = () => {
     console.log(code);
+    setSubmitted(true);
     //e: React.MouseEvent<HTMLButtonElement>
     // setUserAns(e.currentTarget.value);
     // starts tests, not sure how to embed these
@@ -57,6 +59,11 @@ const CodeEditor = () => {
           </Button>
         </Col>
       </Row>
+      {submitted ? (
+        <Row>
+          <p>You have submitted your answer</p>
+        </Row>
+      ) : null}
     </Container>
   );
 
